@@ -1,0 +1,37 @@
+{
+    "name": "vscode-theme-oxforddark",
+    "displayName": "Oxford Dark",
+    "description": "A deep Oxford Dark theme for VSCode",
+    "version": "1.0.0",
+    "publisher": "trystendsmyth",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/trystendsmyth/vscode-theme-oxforddark"
+    },
+    "engines": {
+        "vscode": "^1.69.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "keywords": [
+        "oxford",
+        "theme",
+        "dark"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Oxford Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/oxford-dark-color-theme.json"
+            }
+        ]
+    },
+    "icon": "icon.png",
+    "galleryBanner": {
+        "color": "#002447",
+        "theme": "dark"
+    }
+}
