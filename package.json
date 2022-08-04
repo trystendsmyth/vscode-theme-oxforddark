@@ -1,16 +1,23 @@
 {
     "name": "vscode-theme-oxforddark",
+    "version": "1.1.0",
     "displayName": "Oxford Dark",
     "description": "A deep Oxford Dark theme for VSCode",
-    "version": "1.0.0",
     "publisher": "trystendsmyth",
     "license": "MIT",
+    "scripts": {
+        "build": "node ./scripts/build.js",
+        "lint": "node ./scripts/lint.js",
+        "package": "mkdir -p bin && vsce package --out bin/",
+        "vscode:prepublish": "npm run build",
+        "vsce-publish": "vsce publish"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/trystendsmyth/vscode-theme-oxforddark"
     },
     "engines": {
-        "vscode": "^1.69.0"
+        "vscode": "^1.45.0"
     },
     "categories": [
         "Themes"
@@ -33,5 +40,10 @@
     "galleryBanner": {
         "color": "#002447",
         "theme": "dark"
+    },
+    "devDependencies": {
+        "js-yaml": "^4.1.0",
+        "prettier": "^2.7.0",
+        "vsce": "^2.10.0"
     }
 }
