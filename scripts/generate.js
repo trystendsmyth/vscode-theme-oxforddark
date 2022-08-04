@@ -21,10 +21,15 @@ const { Type, DEFAULT_SCHEMA, load } = require('js-yaml');
  * @typedef {(yamlObj: Theme) => Theme} ThemeTransform
  */
 
+const alphaToHex = function (alpha) {
+    const hexValue = Math.round(alpha*255/100).toString(16).toUpperCase();
+    return alpha < 7 ? '0' + hexValue : hexValue;
+}
+
 const withAlphaType = new Type('!alpha', {
     kind: 'sequence',
-    construct: ([hexRGB, alpha]) => hexRGB + ("0" + alpha).slice(-2),
-    represent: ([hexRGB, alpha]) => hexRGB + ("0" + alpha).slice(-2),
+    construct: ([hexRGB, alpha]) => hexRGB + alphaToHex(alpha),
+    represent: ([hexRGB, alpha]) => hexRGB + alphaToHex(alpha),
 });
 
 const schema = DEFAULT_SCHEMA.extend([withAlphaType]);

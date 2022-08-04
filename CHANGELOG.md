@@ -9,3 +9,6 @@ A deep blue theme for VSCode
 * Update to use build system
 * Update menu and title bar colors
 * Reduce requirements
+
+## Version 1.1.1
+* Fix alpha transparency hex values
