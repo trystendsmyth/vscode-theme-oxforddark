@@ -1,13 +1,15 @@
 {
     "name": "vscode-theme-oxforddark",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "displayName": "Oxford Dark",
     "description": "A deep Oxford Dark theme for VSCode",
     "publisher": "trystendsmyth",
     "license": "MIT",
     "scripts": {
         "build": "node ./scripts/build.js",
-        "lint": "node ./scripts/lint.js",
+        "format": "prettier-standard --format",
+        "lint:build": "node ./scripts/lint.js",
+        "lint": "prettier-standard --lint",
         "package": "mkdir -p bin && vsce package --out bin/",
         "vscode:prepublish": "npm run build",
         "vsce-publish": "vsce publish"
@@ -41,9 +43,14 @@
         "color": "#002447",
         "theme": "dark"
     },
+    "lint-staged": {
+        "*": [
+            "prettier-standard --lint"
+        ]
+    },
     "devDependencies": {
         "js-yaml": "^4.1.0",
-        "prettier": "^2.7.0",
+        "prettier-standard": "^16.4.1",
         "vsce": "^2.10.0"
     }
 }

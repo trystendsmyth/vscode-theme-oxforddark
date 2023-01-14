@@ -22,9 +22,11 @@ const { Type, DEFAULT_SCHEMA, load } = require('js-yaml');
  */
 
 const alphaToHex = function (alpha) {
-    const hexValue = Math.round(alpha*255/100).toString(16).toUpperCase();
+    const hexValue = Math.round((alpha * 255) / 100)
+        .toString(16)
+        .toUpperCase();
     return alpha < 7 ? '0' + hexValue : hexValue;
-}
+};
 
 const withAlphaType = new Type('!alpha', {
     kind: 'sequence',

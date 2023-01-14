@@ -20,7 +20,7 @@ const get = url =>
         });
     });
 
-async function scrapeThemeAvailableKeys() {
+async function scrapeThemeAvailableKeys () {
     const data = await get(THEME_COLOR_REFERENCE_URL);
 
     const matches = data.match(new RegExp('<code>.+?</code>', 'g'));
